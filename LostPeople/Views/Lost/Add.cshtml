@@ -1,0 +1,66 @@
+﻿@model LostPeople.Models.LostedViewModel
+
+<div class="space ">
+
+
+
+    <div class="top">
+        @using (Html.BeginForm("Add", "Lost", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="p-3">
+                    <label>Name of Person</label>
+                    <br />
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", autofocus = "" })
+                    <small>
+                        @Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })
+                    </small>
+                </div>
+
+                <div class="p-3">
+                    <label>How the Person is knew(Apelido, Nick)</label>
+                    <br />
+                    @Html.TextBoxFor(model => model.MoreKnowedLike, new { @class = "form-control" })
+                    <small>
+                        @Html.ValidationMessageFor(model => model.MoreKnowedLike, null, new { @class = "text-danger" })
+                    </small>
+                </div>
+
+                <div class="p-3">
+                    <label>Place that was seem by last time</label>
+                    <br />
+                    @Html.TextBoxFor(model => model.SeemLastTime, new { @class = "form-control" })
+                    <small>
+                        @Html.ValidationMessageFor(model => model.SeemLastTime, null, new { @class = "text-danger" })
+                    </small>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="pt-3">
+                    <label>Choose a Image of Lost Person</label>
+                    @Html.TextBoxFor(model => model.ImageUpload, new { type = "file", @class = "form-control" })
+
+                    <br />
+
+                </div>
+
+                <div class="col-md-6">
+                    <button class="btn btn-outline-warning">
+                        Safe
+                    </button>
+                </div>
+            </div>
+        </div>
+
+            <div>
+                <p>@ViewBag.Message</p>
+                @Html.ValidationSummary(true)
+            </div>
+        }
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+﻿main {
+    font-size: 14pt;
+    background: #D0D0D0;
+    padding: 50px;
+}
+
+.space {
+    padding: 40px;
+    margin: 50px;
+    height: 500px;
+    border-radius: 10px;
+    background: white;
+}
+.fcar{
+    position:sticky;
+    top:0;
+}
+
+.left{
+    float:right;
+}
+
+.coll{
+    color:#005FD4;
+}
+
+.baixo {
+    position: fixed;
+    float: left;
+    
+    
+    margin-left: 85%;
+}
+
+.halth{
+    width:400px;
+}
+
+#avt{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+}
+
+.btnb{
+    margin-top:100px;
+    
+}

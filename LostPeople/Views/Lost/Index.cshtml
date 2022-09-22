@@ -1,0 +1,54 @@
+﻿<div class="baixo">
+    <a href="@Url.Action("Add", "Lost")">
+        <img src="~/img/add.png" alt=" icone soma" />
+    </a>
+</div>
+
+<div class="space">
+
+    <h2>Never lost the Hope</h2>
+    <p>This page or Sectio is for post lost people in same place, not to find lost people,
+    <p>For see find people in same place click here, <a href="@Url.Action("Index", "Find1")">content</a></p>
+
+</div>
+
+<div >
+    @foreach (var item in Model)
+    {
+        <div id="item-@item.Id" class="space row">
+
+            <div class="col-md-6 ">
+                <div class="p-3">
+                    <h3><strong>@item.Namme-</strong><strong style="color:#FF5964;">LOSTED</strong></h3>
+                </div>
+                
+                <div class="p-3">
+                    <label>More Knew like:</label>
+                    <p><strong>@item.MoreKnowedLike</strong></p>
+                </div>
+                
+                <div  class="p-3">
+                    <label>Seem by last time in:</label>
+                    <p><strong>@item.SeemLastTime</strong></p>
+                </div>
+                
+
+            </div>
+            <div class="col-md-6">
+                @if (item.Imagem != null)
+                {
+
+                    var base64 = Convert.ToBase64String(item.Imagem);
+                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+
+
+                    <img src="@imgSrc" style="max-width:100%; max-height:300px; border-radius:10px;" />
+                }
+            </div>
+
+
+
+        </div>
+    }
+</div>
+
